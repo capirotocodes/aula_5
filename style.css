@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Container principal usando Flexbox */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha quando necessário */
+}
+
+/* Elementos que ocupam a largura total (100%) */
+header,
+nav,
+.main,
+footer {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Menu: Links lado a lado e centralizados */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around; /* Distribui os links horizontalmente */
+  align-items: center;
+}
+
+nav ul li a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+/* Asides: Lado a lado (50% cada) */
+.aside {
+  width: 50%;
+  padding: 20px;
+}
+
+/* Cores idênticas à imagem */
+header {
+  background-color: #ffea00;
+} /* Amarelo */
+nav {
+  background-color: #00ff99;
+} /* Verde Água */
+
+.main {
+  background-color: #8a2be2; /* Roxo */
+  color: #ffea00; /* Texto Amarelo */
+  padding: 40px 20px;
+}
+
+.aside-1 {
+  background-color: #ccff00;
+} /* Lima */
+.aside-2 {
+  background-color: #ccff99;
+} /* Verde Claro */
+footer {
+  background-color: #00ffcc;
+} /* Turquesa */
+
+/* Ajuste para o Footer não subir */
+footer {
+  width: 100%;
+}
+
+/* CONFIGURAÇÃO PARA TELAS DE 480PX (MODO MOBILE) */
+@media screen and (max-width: 480px) {
+  /* Força o container a empilhar os elementos */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Garante que todas as seções ocupem 100% da largura */
+  header,
+  nav,
+  .main,
+  .aside,
+  footer {
+    width: 100% !important;
+    display: block;
+  }
+
+  /* Faz os links ficarem um embaixo do outro e centralizados */
+  nav ul {
+    display: block; /* Remove o flex horizontal se houver */
+  }
+
+  nav ul li a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  /* Ajuste de cores conforme a imagem */
+  header {
+    background-color: #ffea00;
+  }
+  nav {
+    background-color: #00ff99;
+  }
+  .main {
+    background-color: #8a2be2;
+    color: #ffea00;
+  }
+  .aside-1 {
+    background-color: #ccff00;
+  }
+  .aside-2 {
+    background-color: #ccff99;
+  }
+  footer {
+    background-color: #00ffcc;
+  }
+}
